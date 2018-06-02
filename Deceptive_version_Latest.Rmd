@@ -2,10 +2,7 @@
 title: "Deceptive Version - America’s unique gun violence problem"
 author: "Preethi S Ranganathan"
 date: "5/14/2018"
-output:
-  html_document:
-    df_print: paged
-  html_notebook: default
+output: github_document
 ---
 
 **Data Product:** America’s unique gun violence problem
@@ -37,7 +34,9 @@ So, I decided to limit the time period which has a constant trend (neither incre
 
 **Improvement:** It would have been a lot better if we have shown increasing trend of homicide rates. Unfortunately, we don't have such data.
 
-**Datasets:** Firearm and Non-firearm homicides- https://webappa.cdc.gov/sasweb/ncipc/mortrate10_us.html
+**Datasets:** Firearm and Non-firearm homicides-
+ Centers for Disease Control and Prevention
+ https://webappa.cdc.gov/sasweb/ncipc/mortrate10_us.html
 
 **Note:** Here, homicides does not include deaths inflicted by the police or other law-enforcing agents in the course of arresting or attempting to arrest lawbreakers.
 
@@ -207,7 +206,7 @@ colnames(firearm_homicide)<- c('Year','Homicides','Population')
 firearm_homicide=firearm_homicide[firearm_homicide$Year>2000&gun_injury$Year<2015,]
 
 # Gun suicides
-suicidefiles <- list.files(path='~/Documents/Santa Clara/data viz/indiv proj/suicide',full.names = TRUE, pattern = ".csv")
+suicidefiles <- list.files(path='~/Documents/Santa Clara/data viz/indiv proj/firearm_suicide',full.names = TRUE, pattern = ".csv")
 d=data.frame()
 for(i in 1:length(suicidefiles)){
   d=rbind(read.table(suicidefiles[i],sep=',',header=TRUE),d)
